@@ -1,0 +1,43 @@
+<h3>Añadir Producto</h3>
+<div class="row">
+    <form action="/products" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="productName" name="productName">
+                <label for="productName">Nombre del producto</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <h5>Descripcion del producto</h5>
+                <textarea id="description" name="description"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="price" name="price">
+                <label for="price">Precio</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <select id="category" name="category">
+                    <option value="groceries" selected>Alimentos y bebidas</option>
+                    <option value="farmacy">Farmacia</option>
+                    <option value="fast-food">Comidas Rapidas</option>
+                </select>
+                <label for="category">Categoria</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="image" name="image">
+                <label for="image">Imagen URL</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Agregar Producto" class="btn">
+            <a href="/dashboard" class="btn orange">Cancelar</a>
+        </div>
+    </form>
+</div>

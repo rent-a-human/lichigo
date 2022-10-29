@@ -1,0 +1,27 @@
+<h6>Pedidos</h6>
+<h3>Bienvenido, {{name}}</h3>
+<p>Productos disponibles</p>
+{{#if products}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+            <tr>
+                <td><a href="/products/{{_id}}">{{productName}}</a></td>
+                <td>{{description}}</td>
+                <td><span class="dash-status">{{price}}</span></td>
+                <td></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>No hay productos disponibles</p>
+{{/if}}
