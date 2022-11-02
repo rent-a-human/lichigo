@@ -42,10 +42,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Handlebars helpers
-const { helpers } = require('./helpers/hbs')
+const { section } = require('./helpers/hbs')
 
 // Handlebars
-app.engine('.hbs', exphbs({ helpers: {helpers}, defaultLayout: 'main', extname: '.hbs' }));
+app.engine('.hbs', exphbs({ helpers: {section}, defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
 // Sessions
