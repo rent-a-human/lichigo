@@ -27,13 +27,12 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
     }
 })
 
-// @desc    Dashboard
+// @desc    Carro de compras
 // @route   GET /productos
-router.get('/productos', ensureAuth, async (req, res) => {
+router.get('/comprar', async (req, res) => {
     try {
         const products = await Product.find({ }).lean()
-        res.render('dashboard', {
-            name: req.user.firstName,
+        res.render('products/products', {
             products
         })
     } catch (error) {
