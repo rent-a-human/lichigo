@@ -17,8 +17,22 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    image: {
+    picture: {
         type: String
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    country: {
+        type: String,
+        default: 'Colombia'
+    },
+    address: {
+        type: String,
+    },
+    phoneNumber: {
+        type: String,
     },
     createdAt: {
         type: Date,
@@ -28,3 +42,4 @@ const UserSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('User', UserSchema)
+

@@ -23,9 +23,15 @@ const ProductSchema = new mongoose.Schema({
     image: {
         type: String
     },
-    vendor: {
+    userVendor: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    unit: {
+        type: String,
+        required: true,
+        default: 'unit',
+        enum: ['unit', 'g', 'kg']
     }
 
 })

@@ -1,0 +1,54 @@
+<h6>Perfil</h6>
+<h3>Bienvenido, {{ user.firstName }}</h3>
+<p>Esto es lo que sabemos de ti</p>
+<div class="sp">
+<img class="profile-picture" src="{{ user.picture }}">
+
+<table>
+    <tbody>
+        <tr>
+            <th scope="row">Nombre:</th>
+            <td>{{user.firstName}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Apellido:</th>
+            <td>{{user.lastName}}</td>
+        </tr>
+        <tr>
+            <th scope="row">correo:</th>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<ul>
+    <li>Id:</li>
+    <li>{{user.googleId}}</li>
+</ul>
+
+<h3>Productos a la venta</h3>
+
+{{#if products}}
+<table class="striped m-bottom">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+            <tr>
+                <td><a href="/products/{{_id}}">{{productName}}</a></td>
+                <td>{{description}}</td>
+                <td><span class="dash-status">{{price}}</span></td>
+                <td></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>No hay productos disponibles</p>
+{{/if}}

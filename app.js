@@ -47,7 +47,7 @@ app.set('view engine', '.hbs');
 
 // Sessions
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'lichigov1',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
@@ -66,6 +66,7 @@ app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/products', require('./routes/products'))
 app.use('/upload', require('./routes/upload'))
+app.use('/perfil', require('./routes/profile'))
 
 
 

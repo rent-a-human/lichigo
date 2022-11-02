@@ -7,3 +7,24 @@ p {
     margin-top: 100px;
     text-align: center;
 }
+
+.profile-picture {
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.sp {
+    display: flex;
+    flex-direction: row;
+}
+
+.reg-padding {
+    padding: 12px;
+}
+
+.m-bottom {
+    margin-bottom: 50px;
+}
