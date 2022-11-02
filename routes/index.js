@@ -27,4 +27,18 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
     }
 })
 
+// @desc    Carro de compras
+// @route   GET /productos
+router.get('/comprar', async (req, res) => {
+    try {
+        const products = await Product.find({ }).lean()
+        res.render('products/products', {
+            products
+        })
+    } catch (error) {
+        console.log(error)
+        res.render('error/500')
+    }
+})
+
 module.exports = router

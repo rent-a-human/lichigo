@@ -1,0 +1,32 @@
+{{#section 'head'}}
+<meta property="og:site_name" content="Lichigo: Todo a su alcance">
+<meta property="og:title" content="Mercado, Farmacia, Comidas Rapidas y mas">
+<meta property="og:description" content="Todo esto al alcance de tu mano">
+{{/section}}
+
+<h6>Compra lo que necesitas al mejor precio</h6>
+<p>Productos disponibles</p>
+{{#if products}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+        <tr>
+            <td><a href="/products/{{_id}}">{{productName}}</a></td>
+            <td>{{description}}</td>
+            <td><span class="dash-status">{{price}}</span></td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>No hay productos disponibles</p>
+{{/if}}
