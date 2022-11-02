@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 const ProductSchema = new mongoose.Schema({
+    availableUnits: {
+        type: Number
+    },
     productName: {
         type: String,
         required: true,
@@ -31,7 +34,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: 'unit',
-        enum: ['unit', 'g', 'kg']
+        enum: ['unidad', 'g', 'kg']
     }
 
 })

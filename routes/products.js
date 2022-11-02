@@ -16,7 +16,7 @@ router.get('/add', (req, res) => {
 router.post('/', ensureAuth, async (req, res) => {
     try {
         console.log(req.user)
-        req.body.vendor = req.user.id
+        req.body.userVendor = req.user.id
         console.log(req.body)
         await Product.create(req.body)
         res.redirect('/dashboard')
