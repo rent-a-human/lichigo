@@ -16,7 +16,7 @@ router.get('/', ensureGuest, (req, res) => {
 // @route   GET /dashboard
 router.get('/dashboard', ensureAuth, async (req, res) => {
     try {
-        const products = await Product.find({ vendor: req.user.id }).lean()
+        const products = await Product.find({ userVendor: req.user.id }).lean()
         res.render('dashboard', {
             name: req.user.firstName,
             products
