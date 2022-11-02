@@ -8,7 +8,7 @@ const Product = require('../models/Product')
 // @route   GET perfil/
 router.get('/', ensureAuth, async (req, res) => {
     try {
-        const products = await Product.find({ vendor: req.user.id }).lean()
+        const products = await Product.find({ userVendor: req.user.id }).lean()
         const user = req.user.toJSON();
         const picture = req.user.picture
         console.log(user)
