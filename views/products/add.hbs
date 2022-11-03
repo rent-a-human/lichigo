@@ -50,6 +50,7 @@
                 <input type="text" id="image" name="image">
                 <label for="image">Imagen URL</label>
             </div>
+            <button type="button" onclick="upload()">Upload</button>
         </div>
         <div class="row">
             <input type="submit" value="Agregar Producto" class="btn">
@@ -57,3 +58,10 @@
         </div>
     </form>
 </div>
+
+<script type="text/javascript">
+    function upload() {
+        console.log('hello');
+        document.getElementById('image').setAttribute('value', 'hello');
+    }
+</script>

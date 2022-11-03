@@ -11,6 +11,18 @@ router.get('/add', (req, res) => {
     res.render('products/add')
 })
 
+// @desc    Returns all products
+// @route   GET /products/add
+router.get('/', async (req, res) => {
+    try {
+        const products = await Product.find({ }).lean()
+        res.status(200).json(products);
+    } catch (error) {
+        console.log(error)
+        res.render('error/500')
+    }
+})
+
 // @desc    Process add form
 // @route   POST /products
 router.post('/', ensureAuth, async (req, res) => {
